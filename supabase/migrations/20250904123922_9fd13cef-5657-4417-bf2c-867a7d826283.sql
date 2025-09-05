@@ -1,0 +1,45 @@
+-- Créer la nouvelle réalisation villa F4 CNSS avec les images existantes
+INSERT INTO public.projects (
+  titre,
+  description,
+  categorie,
+  type_projet,
+  statut,
+  ville,
+  adresse,
+  superficie,
+  pourcentage_avancement,
+  client_nom,
+  client_email,
+  images,
+  date_debut,
+  date_fin_reelle,
+  budget_prevu,
+  budget_reel,
+  notes_internes
+) VALUES (
+  'Réhabilitation d''une villa F4 à la cité RENAISSANCE avec notre partenaire CNSS',
+  'Projet de réhabilitation complète d''une villa F4 située dans la prestigieuse cité RENAISSANCE. Ce projet, réalisé en partenariat avec la CNSS (Caisse Nationale de Sécurité Sociale), comprenait des travaux d''étanchéité, de finition intérieure, de carrelage, l''installation d''une citerne d''eau et l''aménagement d''une terrasse avec piscine. Les travaux ont été menés selon les plus hauts standards de qualité, respectant les délais convenus avec notre partenaire institutionnel.',
+  'renovation',
+  'residentiel',
+  'termine',
+  'Lomé',
+  'Cité RENAISSANCE, Lomé',
+  150.00,
+  100,
+  'CNSS - Caisse Nationale de Sécurité Sociale',
+  'cnss@cnss.tg',
+  ARRAY[
+    '/lovable-uploads/06ea9e3f-9a96-4075-b0e4-d9a2b05a95ad.png',
+    '/lovable-uploads/09c437d5-9b16-45fa-ab93-c9656e8e6b23.png',
+    '/lovable-uploads/0d0f09d4-82ca-4e87-8245-5dd69bf4d4f6.png',
+    '/lovable-uploads/102ee6c5-d4d8-4618-b7c5-7faccf7f59a2.png',
+    '/lovable-uploads/4abedd4c-64ac-4b74-a4c4-84b13ada9c5b.png',
+    '/lovable-uploads/4b4310f1-f8a0-4790-8d35-38d4cc4e6958.png'
+  ],
+  '2024-01-15',
+  '2024-08-30',
+  45000000,
+  42500000,
+  'Projet phare réalisé en partenariat avec la CNSS. Travaux de haute qualité incluant : étanchéité complète, finitions intérieures premium, carrelage de standing, installation système d''eau avec citerne, aménagement terrasse avec piscine. Client très satisfait du résultat final.'
+);

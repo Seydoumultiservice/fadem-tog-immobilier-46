@@ -1,0 +1,194 @@
+
+{
+  "rewrites": [
+    {
+      "source": "/biens",
+      "destination": "/#biens"
+    },
+    {
+      "source": "/properties", 
+      "destination": "/#biens"
+    },
+    {
+      "source": "/immobilier",
+      "destination": "/#biens"
+    },
+    {
+      "source": "/realisations",
+      "destination": "/#realisations"
+    },
+    {
+      "source": "/projets",
+      "destination": "/#realisations"
+    },
+    {
+      "source": "/btp",
+      "destination": "/#realisations"
+    },
+    {
+      "source": "/services",
+      "destination": "/#services"
+    },
+    {
+      "source": "/nos-services",
+      "destination": "/#services"
+    },
+    {
+      "source": "/galerie",
+      "destination": "/#galerie"
+    },
+    {
+      "source": "/gallery",
+      "destination": "/#galerie"
+    },
+    {
+      "source": "/appartements-meubles",
+      "destination": "/#appartements"
+    },
+    {
+      "source": "/furnished-apartments", 
+      "destination": "/#appartements"
+    },
+    {
+      "source": "/vehicules",
+      "destination": "/#vehicules"
+    },
+    {
+      "source": "/vehicles",
+      "destination": "/#vehicules"
+    },
+    {
+      "source": "/gerance",
+      "destination": "/#gerance"
+    },
+    {
+      "source": "/property-management",
+      "destination": "/#gerance"
+    },
+    {
+      "source": "/temoignages",
+      "destination": "/#temoignages"
+    },
+    {
+      "source": "/testimonials",
+      "destination": "/#temoignages"
+    },
+    {
+      "source": "/contact",
+      "destination": "/#contact"
+    },
+    {
+      "source": "/contactez-nous",
+      "destination": "/#contact"
+    },
+    {
+      "source": "/admin",
+      "destination": "/admin"
+    },
+    {
+      "source": "/admin-dashboard",
+      "destination": "/admin-dashboard"
+    },
+    {
+      "source": "/dashboard",
+      "destination": "/admin-dashboard"
+    },
+    {
+      "source": "/administration",
+      "destination": "/admin"
+    },
+    {
+      "source": "/Sitemap.xml",
+      "destination": "/sitemap.xml"
+    },
+    {
+      "source": "/sitemap.XML",
+      "destination": "/sitemap.xml"
+    },
+    {
+      "source": "/SITEMAP.XML",
+      "destination": "/sitemap.xml"
+    },
+    {
+      "source": "/Robots.txt",
+      "destination": "/robots.txt"
+    },
+    {
+      "source": "/ROBOTS.TXT",
+      "destination": "/robots.txt"
+    },
+    {
+      "source": "/immobilier-togo",
+      "destination": "/#biens"
+    },
+    {
+      "source": "/construction-btp-togo",
+      "destination": "/#realisations"
+    },
+    {
+      "source": "/gerance-locative-lome",
+      "destination": "/#gerance"
+    },
+    {
+      "source": "/location-vehicules-togo",
+      "destination": "/#vehicules"
+    },
+    {
+      "source": "/diaspora-togolaise",
+      "destination": "/#a-propos"
+    },
+    {
+      "source": "/investir-togo-diaspora",
+      "destination": "/#services"
+    },
+    {
+      "source": "/((?!sitemap\\.xml|robots\\.txt|favicon\\.ico|lovable-uploads|_next|api).*)",
+      "destination": "/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/sitemap.xml",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/xml; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, s-maxage=3600"
+        }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, s-maxage=3600"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,197 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- 
+    Sitemap XML optimisé pour Groupe FADEM
+    Domaine: https://www.groupefadem.tech
+    Créé par: GSM TECH SOLUTION (SEYDOU)
+    Contact: +228 91664887 (Togo) / +226 54517339 (Burkina)
+    Email: seydougsm1@gmail.com
+    Dernière mise à jour: 31 août 2025
+  -->
+
+  <!-- Page d'accueil principale -->
+  <url>
+    <loc>https://www.groupefadem.tech/</loc>
+    <lastmod>2025-08-31T14:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.groupefadem.tech/lovable-uploads/baf4fa9f-b4a9-46b9-8143-ed778cbe7c12.png</image:loc>
+      <image:title>Logo Groupe FADEM - Expert Immobilier Togo</image:title>
+      <image:caption>Groupe FADEM - Spécialiste immobilier, BTP et gérance locative au Togo - Site créé par GSM TECH SOLUTION</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Services principaux -->
+  <url>
+    <loc>https://www.groupefadem.tech/#services</loc>
+    <lastmod>2025-08-31T14:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- Biens immobiliers -->
+  <url>
+    <loc>https://www.groupefadem.tech/#biens</loc>
+    <lastmod>2025-08-31T14:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://www.groupefadem.tech/lovable-uploads/4abedd4c-64ac-4b74-a4c4-84b13ada9c5b.png</image:loc>
+      <image:title>Biens Immobiliers Groupe FADEM</image:title>
+      <image:caption>Portfolio immobilier premium au Togo</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Projets et réalisations BTP -->
+  <url>
+    <loc>https://www.groupefadem.tech/#realisations</loc>
+    <lastmod>2025-08-31T14:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://www.groupefadem.tech/lovable-uploads/8ec83cc5-ed50-4539-b9c5-5239a6e91c05.png</image:loc>
+      <image:title>Réalisations BTP Groupe FADEM</image:title>
+      <image:caption>Projets de construction et rénovation au Togo</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Appartements meublés -->
+  <url>
+    <loc>https://www.groupefadem.tech/#appartements-meubles</loc>
+    <lastmod>2025-08-31T14:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://www.groupefadem.tech/lovable-uploads/c1f67390-a4b3-48bb-b625-e38757d93c27.png</image:loc>
+      <image:title>Appartements Meublés Lomé</image:title>
+      <image:caption>Appartements tout équipés à Lomé, Togo</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Véhicules de location -->
+  <url>
+    <loc>https://www.groupefadem.tech/#vehicules</loc>
+    <lastmod>2025-08-31T14:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://www.groupefadem.tech/lovable-uploads/97514e34-c373-4a22-abb4-8fbf7f8304ae.png</image:loc>
+      <image:title>Location Véhicules Togo</image:title>
+      <image:caption>Flotte de véhicules premium pour location</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Gérance locative -->
+  <url>
+    <loc>https://www.groupefadem.tech/#gerance</loc>
+    <lastmod>2025-08-31T14:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Galerie photos -->
+  <url>
+    <loc>https://www.groupefadem.tech/#galerie</loc>
+    <lastmod>2025-08-31T14:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://www.groupefadem.tech/lovable-uploads/ff1282ce-da89-4a00-b69c-9e40e87ada43.png</image:loc>
+      <image:title>Galerie Groupe FADEM</image:title>
+      <image:caption>Portfolio visuel de nos réalisations</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Témoignages clients -->
+  <url>
+    <loc>https://www.groupefadem.tech/#temoignages</loc>
+    <lastmod>2025-08-31T14:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- À propos -->
+  <url>
+    <loc>https://www.groupefadem.tech/#a-propos</loc>
+    <lastmod>2025-08-31T14:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <!-- Contact -->
+  <url>
+    <loc>https://www.groupefadem.tech/#contact</loc>
+    <lastmod>2025-08-31T14:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- Pages alternatives pour SEO international -->
+  <url>
+    <loc>https://www.groupefadem.tech/immobilier-togo</loc>
+    <lastmod>2025-08-31T14:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.groupefadem.tech/construction-btp-togo</loc>
+    <lastmod>2025-08-31T14:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.groupefadem.tech/gerance-locative-lome</loc>
+    <lastmod>2025-08-31T14:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.groupefadem.tech/location-vehicules-togo</loc>
+    <lastmod>2025-08-31T14:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Pages spécialisées diaspora -->
+  <url>
+    <loc>https://www.groupefadem.tech/diaspora-togolaise</loc>
+    <lastmod>2025-08-31T14:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://www.groupefadem.tech/investir-togo-diaspora</loc>
+    <lastmod>2025-08-31T14:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Pages de services spécialisés -->
+  <url>
+    <loc>https://www.groupefadem.tech/services</loc>
+    <lastmod>2025-08-31T14:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://www.groupefadem.tech/galerie</loc>
+    <lastmod>2025-08-31T14:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+</urlset>

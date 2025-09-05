@@ -1,0 +1,37 @@
+
+# Redirections pour Netlify/Vercel - gestion des routes et sections
+/biens /#biens 302
+/properties /#biens 302
+/immobilier /#biens 302
+
+/realisations /#realisations 302
+/projets /#realisations 302
+/btp /#realisations 302
+
+/services /#services 302
+/nos-services /#services 302
+
+/galerie /#galerie 302
+/gallery /#galerie 302
+
+/appartements-meubles /#appartements 302
+/furnished-apartments /#appartements 302
+
+/vehicules /#vehicules 302
+/vehicles /#vehicules 302
+
+/gerance /#gerance 302
+/property-management /#gerance 302
+
+/temoignages /#temoignages 302
+/testimonials /#temoignages 302
+
+/contact /#contact 302
+/contactez-nous /#contact 302
+
+/admin /#admin 302
+/dashboard /#admin 302
+/administration /#admin 302
+
+# Gestion du SPA - rediriger toutes les autres routes vers index.html
+/* /index.html 200
