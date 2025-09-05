@@ -23,7 +23,7 @@ const PropertyCard = ({ property }: PropertyCardProps) => {
     const regex = /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([^&\n?#]+)/;
     const match = url.match(regex);
     if (match && match[1]) {
-      return `https://www.youtube.com/embed/${match[1]}?autoplay=0&mute=1&controls=1&rel=0`;
+      return `https://www.youtube.com/embed/${match[1]}?autoplay=1&mute=1&controls=1&rel=0&loop=1&playlist=${match[1]}`;
     }
     return url;
   };

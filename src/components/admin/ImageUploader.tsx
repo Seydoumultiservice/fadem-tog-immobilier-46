@@ -261,10 +261,23 @@ const ImageUploader = ({
   return (
     <Card className="w-full">
       <CardHeader>
-        <CardTitle className="flex items-center gap-2">
-          <FileImage className="w-5 h-5 text-fadem-blue" />
-          Upload d'Images ({files.length}/{maxFiles})
+        <CardTitle className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <FileImage className="w-5 h-5 text-fadem-blue" />
+            Upload d'Images ({files.length}/{maxFiles})
+          </div>
+          {files.length >= 5 && (
+            <div className="flex items-center gap-1 text-green-600 text-sm">
+              <Check className="w-4 h-4" />
+              Excellente galerie !
+            </div>
+          )}
         </CardTitle>
+        {files.length < 5 && (
+          <p className="text-sm text-amber-600 bg-amber-50 p-2 rounded border border-amber-200">
+            ⚠️ Ajoutez au moins 5 images pour une présentation optimale de votre bien
+          </p>
+        )}
       </CardHeader>
       <CardContent className="space-y-4">
         {/* Zone de drop */}
@@ -272,7 +285,9 @@ const ImageUploader = ({
           className={`border-2 border-dashed rounded-lg p-8 text-center transition-all duration-300 ${
             dragOver 
               ? 'border-fadem-blue bg-fadem-blue/10 scale-105' 
-              : 'border-gray-300 hover:border-fadem-blue/50 hover:bg-gray-50'
+              : files.length < 5 
+                ? 'border-amber-400 bg-amber-50 hover:border-fadem-blue/50 hover:bg-fadem-blue/5'
+                : 'border-green-400 bg-green-50 hover:border-fadem-blue/50 hover:bg-fadem-blue/5'
           }`}
           onDrop={handleDrop}
           onDragOver={(e) => {
@@ -282,11 +297,16 @@ const ImageUploader = ({
           onDragLeave={() => setDragOver(false)}
         >
           <div className="animate-bounce mb-4">
-            <Upload className="w-12 h-12 mx-auto text-fadem-blue" />
+            <Upload className={`w-12 h-12 mx-auto ${files.length < 5 ? 'text-amber-500' : 'text-green-500'}`} />
           </div>
           <p className="text-gray-600 mb-2 font-medium">
             Glissez vos images ici ou cliquez pour sélectionner
           </p>
+          {files.length < 5 && (
+            <p className="text-amber-600 font-medium text-sm mb-3">
+              📷 Encore {5 - files.length} image(s) recommandée(s) 
+            </p>
+          )}
           <Input
             type="file"
             multiple
@@ -298,10 +318,14 @@ const ImageUploader = ({
           <Button
             variant="outline"
             onClick={() => document.getElementById('file-upload')?.click()}
-            className="mb-2 hover:bg-fadem-blue hover:text-white transition-colors"
+            className={`mb-2 transition-colors ${
+              files.length < 5 
+                ? 'bg-amber-100 border-amber-300 hover:bg-amber-200 text-amber-700' 
+                : 'hover:bg-fadem-blue hover:text-white'
+            }`}
           >
             <Image className="w-4 h-4 mr-2" />
-            Sélectionner des fichiers
+            {files.length === 0 ? 'Commencer avec 5 images' : 'Ajouter plus d\'images'}
           </Button>
           <p className="text-xs text-gray-500">
             Maximum {maxFiles} images • JPG, PNG, WebP, GIF

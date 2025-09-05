@@ -29,11 +29,11 @@ const VehicleDetailModal = ({ vehicle, isOpen, onClose }: VehicleDetailModalProp
   const getVideoEmbedUrl = (url: string) => {
     if (url.includes('youtube.com') || url.includes('youtu.be')) {
       const videoId = url.includes('watch?v=') ? url.split('watch?v=')[1] : url.split('youtu.be/')[1];
-      return `https://www.youtube.com/embed/${videoId?.split('&')[0]}`;
+      return `https://www.youtube.com/embed/${videoId?.split('&')[0]}?autoplay=1&mute=1&controls=1&rel=0&loop=1&playlist=${videoId?.split('&')[0]}`;
     }
     if (url.includes('vimeo.com')) {
       const videoId = url.split('vimeo.com/')[1];
-      return `https://player.vimeo.com/video/${videoId}`;
+      return `https://player.vimeo.com/video/${videoId}?autoplay=1&muted=1&loop=1`;
     }
     return url;
   };

@@ -38,13 +38,13 @@ const PropertyDetailModal = ({ property, isOpen, onClose }: PropertyDetailModalP
       const videoId = url.includes('youtu.be') 
         ? url.split('/').pop()?.split('?')[0]
         : url.split('v=')[1]?.split('&')[0];
-      return `https://www.youtube.com/embed/${videoId}`;
+      return `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&controls=1&rel=0&loop=1&playlist=${videoId}`;
     }
     if (url.includes('facebook.com')) {
-      return `https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(url)}`;
+      return `https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(url)}&autoplay=true&muted=true`;
     }
     if (url.includes('tiktok.com')) {
-      return url.replace('/video/', '/embed/');
+      return url.replace('/video/', '/embed/') + '?autoplay=1';
     }
     return url;
   };

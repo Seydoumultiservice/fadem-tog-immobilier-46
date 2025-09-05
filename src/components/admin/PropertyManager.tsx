@@ -522,14 +522,17 @@ const PropertyManager = ({ properties, onRefresh }: PropertyManagerProps) => {
 
               {/* Upload d'images optimisé */}
               <div>
-                <Label className="text-base font-medium">Images du bien</Label>
-                <div className="mt-3">
+                <Label className="text-lg font-semibold text-fadem-blue mb-2">📸 Images du bien (Minimum 5 recommandées)</Label>
+                <div className="mt-3 bg-gradient-to-br from-fadem-blue/5 to-fadem-gold/5 border-2 border-dashed border-fadem-blue/30 rounded-lg p-6 hover:border-fadem-blue/50 transition-colors">
                   <ImageUploader
                     onImagesUploaded={handleImagesUploaded}
                     maxFiles={15}
                     existingImages={formData.images}
                     onUploadStatusChange={(isUploading) => setIsUploadingImages(isUploading)}
                   />
+                  <div className="mt-4 p-3 bg-blue-50 rounded-lg border border-blue-200">
+                    <p className="text-sm text-blue-700 font-medium">💡 Conseil: Plus vous ajoutez d'images de qualité, plus votre bien sera attractif aux visiteurs</p>
+                  </div>
                 </div>
               </div>
 
