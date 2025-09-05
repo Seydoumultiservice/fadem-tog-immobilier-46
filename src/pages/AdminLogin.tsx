@@ -41,7 +41,7 @@ const AdminLogin = () => {
           description: "Bienvenue dans le dashboard administrateur FADEM",
         });
 
-        navigate('/admin/dashboard');
+        navigate('/admin-dashboard');
       } else {
         toast({
           title: "❌ Accès refusé",
@@ -64,7 +64,7 @@ const AdminLogin = () => {
   // Vérifier si déjà connecté
   React.useEffect(() => {
     if (verifyAdminSession()) {
-      navigate('/admin/dashboard');
+      navigate('/admin-dashboard');
     }
   }, [verifyAdminSession, navigate]);
 

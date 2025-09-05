@@ -415,7 +415,7 @@ const VehicleManager = ({ vehicles, sellRequests, onRefresh }: VehicleManagerPro
 
                 <div className="space-y-4">
                   <div>
-                    <Label htmlFor="prix">Prix {formData.type_transaction === 'vente' ? 'de vente' : 'par jour'} (€) *</Label>
+                    <Label htmlFor="prix">Prix {formData.type_transaction === 'vente' ? 'de vente' : 'par jour'} (FCFA) *</Label>
                     <Input
                       id="prix"
                       type="number"
@@ -428,7 +428,7 @@ const VehicleManager = ({ vehicles, sellRequests, onRefresh }: VehicleManagerPro
 
                   {formData.type_transaction === 'location' && (
                     <div>
-                      <Label htmlFor="prix_location_jour">Prix par jour (€)</Label>
+                      <Label htmlFor="prix_location_jour">Prix par jour (FCFA)</Label>
                       <Input
                         id="prix_location_jour"
                         type="number"
@@ -737,7 +737,7 @@ const VehicleManager = ({ vehicles, sellRequests, onRefresh }: VehicleManagerPro
                   
                   <div className="flex justify-between items-center mb-3">
                     <span className="font-bold text-fadem-blue">
-                      {vehicle.prix?.toLocaleString('fr-FR')} €
+                      {vehicle.prix?.toLocaleString('fr-FR')} FCFA
                     </span>
                     <span className="text-xs text-gray-500">
                       {new Date(vehicle.created_at).toLocaleDateString('fr-FR')}
@@ -818,7 +818,7 @@ const VehicleManager = ({ vehicles, sellRequests, onRefresh }: VehicleManagerPro
                     <div>
                       <h4 className="font-semibold">{request.marque} {request.modele}</h4>
                       <p className="text-sm text-gray-600">{request.nom} • {request.email}</p>
-                      <p className="text-sm text-gray-600">Prix souhaité: {request.prix_souhaite?.toLocaleString('fr-FR')} €</p>
+                      <p className="text-sm text-gray-600">Prix souhaité: {request.prix_souhaite?.toLocaleString('fr-FR')} FCFA</p>
                     </div>
                     <Badge className={
                       request.statut === 'nouveau' ? 'bg-blue-500' :

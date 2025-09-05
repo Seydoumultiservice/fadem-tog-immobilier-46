@@ -169,7 +169,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
                 <div className="flex justify-between items-center mb-6">
                   <span className="text-sm text-gray-600">Budget</span>
                   <span className="font-semibold text-fadem-blue">
-                    {project.budget_prevu.toLocaleString('fr-FR')} €
+                    {project.budget_prevu.toLocaleString('fr-FR')} FCFA
                   </span>
                 </div>
               )}
