@@ -9,6 +9,7 @@ import { Car, Fuel, Settings, MapPin, Calendar, DollarSign, Phone, Eye, Heart, S
 import { supabase } from '@/integrations/supabase/client';
 import { Vehicle } from '@/types/vehicle';
 import VehicleDetailModal from './VehicleDetailModal';
+import YoutubeVideoPreview from './YoutubeVideoPreview';
 import SellVehicleForm from './SellVehicleForm';
 
 const Vehicles = () => {
@@ -46,6 +47,10 @@ const Vehicles = () => {
       return `${price.toLocaleString()} FCFA/jour`;
     }
     return `${price.toLocaleString()} FCFA`;
+  };
+
+  const getTransactionColor = (type: string) => {
+    return type === 'vente' ? 'bg-fadem-blue text-white' : 'bg-fadem-gold text-white';
   };
 
   const getTransmissionIcon = (transmission?: string) => {
@@ -135,33 +140,67 @@ const Vehicles = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredVehicles.map((vehicle) => (
                 <Card key={vehicle.id} className="group hover:shadow-2xl transition-all duration-300 transform hover:scale-105 overflow-hidden bg-white border border-gray-100">
-                  <div className="relative">
-                    {vehicle.images && vehicle.images.length > 0 ? (
-                      <img 
-                        src={vehicle.images[0]} 
-                        alt={vehicle.titre}
-                        className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
-                      />
+                  {/* Vidéo YouTube en priorité, sinon images */}
+                  <div className="relative h-48 overflow-hidden group">
+                    {vehicle.video_url ? (
+                      <div className="h-full">
+                        <YoutubeVideoPreview
+                          videoUrl={vehicle.video_url}
+                          title={vehicle.titre}
+                          className="h-full"
+                          autoplay={false}
+                        />
+                        
+                        {/* Badges sur vidéo */}
+                        <div className="absolute top-3 left-3 flex gap-2 z-10">
+                          <Badge className={getTransactionColor(vehicle.type_transaction)}>
+                            {vehicle.type_transaction}
+                          </Badge>
+                          {vehicle.annee && (
+                            <Badge variant="secondary" className="bg-white/90 text-gray-800">
+                              {vehicle.annee}
+                            </Badge>
+                          )}
+                        </div>
+                        
+                        {/* Boutons action sur vidéo */}
+                        <div className="absolute top-3 right-3 flex gap-2 z-10">
+                          <Button size="sm" variant="secondary" className="w-8 h-8 p-0 bg-white/80 hover:bg-white">
+                            <Heart className="w-4 h-4" />
+                          </Button>
+                          <Button size="sm" variant="secondary" className="w-8 h-8 p-0 bg-white/80 hover:bg-white">
+                            <Share2 className="w-4 h-4" />
+                          </Button>
+                        </div>
+                      </div>
+                    ) : vehicle.images && vehicle.images.length > 0 ? (
+                      <>
+                        <img 
+                          src={vehicle.images[0]} 
+                          alt={vehicle.titre}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                        />
+                        
+                        <div className="absolute top-3 left-3">
+                          <Badge className="bg-fadem-blue text-white">
+                            {vehicle.type_transaction}
+                          </Badge>
+                        </div>
+                        
+                        <div className="absolute top-3 right-3 flex gap-2">
+                          <Button size="sm" variant="secondary" className="w-8 h-8 p-0 bg-white/80 hover:bg-white">
+                            <Heart className="w-4 h-4" />
+                          </Button>
+                          <Button size="sm" variant="secondary" className="w-8 h-8 p-0 bg-white/80 hover:bg-white">
+                            <Share2 className="w-4 h-4" />
+                          </Button>
+                        </div>
+                      </>
                     ) : (
-                      <div className="w-full h-48 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
+                      <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
                         <Car className="w-16 h-16 text-gray-400" />
                       </div>
                     )}
-                    
-                    <div className="absolute top-3 left-3">
-                      <Badge className="bg-fadem-blue text-white">
-                        {vehicle.type_transaction}
-                      </Badge>
-                    </div>
-                    
-                    <div className="absolute top-3 right-3 flex gap-2">
-                      <Button size="sm" variant="secondary" className="w-8 h-8 p-0 bg-white/80 hover:bg-white">
-                        <Heart className="w-4 h-4" />
-                      </Button>
-                      <Button size="sm" variant="secondary" className="w-8 h-8 p-0 bg-white/80 hover:bg-white">
-                        <Share2 className="w-4 h-4" />
-                      </Button>
-                    </div>
                   </div>
                   
                   <CardContent className="p-6">
@@ -260,33 +299,67 @@ const Vehicles = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredVehicles.map((vehicle) => (
                 <Card key={vehicle.id} className="group hover:shadow-2xl transition-all duration-300 transform hover:scale-105 overflow-hidden bg-white border border-gray-100">
-                  <div className="relative">
-                    {vehicle.images && vehicle.images.length > 0 ? (
-                      <img 
-                        src={vehicle.images[0]} 
-                        alt={vehicle.titre}
-                        className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
-                      />
+                  {/* Vidéo YouTube en priorité, sinon images */}
+                  <div className="relative h-48 overflow-hidden group">
+                    {vehicle.video_url ? (
+                      <div className="h-full">
+                        <YoutubeVideoPreview
+                          videoUrl={vehicle.video_url}
+                          title={vehicle.titre}
+                          className="h-full"
+                          autoplay={false}
+                        />
+                        
+                        {/* Badges sur vidéo */}
+                        <div className="absolute top-3 left-3 flex gap-2 z-10">
+                          <Badge className={getTransactionColor(vehicle.type_transaction)}>
+                            {vehicle.type_transaction}
+                          </Badge>
+                          {vehicle.annee && (
+                            <Badge variant="secondary" className="bg-white/90 text-gray-800">
+                              {vehicle.annee}
+                            </Badge>
+                          )}
+                        </div>
+                        
+                        {/* Boutons action sur vidéo */}
+                        <div className="absolute top-3 right-3 flex gap-2 z-10">
+                          <Button size="sm" variant="secondary" className="w-8 h-8 p-0 bg-white/80 hover:bg-white">
+                            <Heart className="w-4 h-4" />
+                          </Button>
+                          <Button size="sm" variant="secondary" className="w-8 h-8 p-0 bg-white/80 hover:bg-white">
+                            <Share2 className="w-4 h-4" />
+                          </Button>
+                        </div>
+                      </div>
+                    ) : vehicle.images && vehicle.images.length > 0 ? (
+                      <>
+                        <img 
+                          src={vehicle.images[0]} 
+                          alt={vehicle.titre}
+                          className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                        />
+                        
+                        <div className="absolute top-3 left-3">
+                          <Badge className="bg-fadem-gold text-white">
+                            {vehicle.type_transaction}
+                          </Badge>
+                        </div>
+                        
+                        <div className="absolute top-3 right-3 flex gap-2">
+                          <Button size="sm" variant="secondary" className="w-8 h-8 p-0 bg-white/80 hover:bg-white">
+                            <Heart className="w-4 h-4" />
+                          </Button>
+                          <Button size="sm" variant="secondary" className="w-8 h-8 p-0 bg-white/80 hover:bg-white">
+                            <Share2 className="w-4 h-4" />
+                          </Button>
+                        </div>
+                      </>
                     ) : (
-                      <div className="w-full h-48 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
+                      <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
                         <Car className="w-16 h-16 text-gray-400" />
                       </div>
                     )}
-                    
-                    <div className="absolute top-3 left-3">
-                      <Badge className="bg-fadem-gold text-white">
-                        {vehicle.type_transaction}
-                      </Badge>
-                    </div>
-                    
-                    <div className="absolute top-3 right-3 flex gap-2">
-                      <Button size="sm" variant="secondary" className="w-8 h-8 p-0 bg-white/80 hover:bg-white">
-                        <Heart className="w-4 h-4" />
-                      </Button>
-                      <Button size="sm" variant="secondary" className="w-8 h-8 p-0 bg-white/80 hover:bg-white">
-                        <Share2 className="w-4 h-4" />
-                      </Button>
-                    </div>
                   </div>
                   
                   <CardContent className="p-6">

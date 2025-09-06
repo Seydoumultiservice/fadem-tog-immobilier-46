@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import { Project } from '@/types/database';
 import ProjectDetailModal from './ProjectDetailModal';
+import YoutubeVideoPreview from './YoutubeVideoPreview';
 
 interface ProjectCardProps {
   project: Project;
@@ -64,43 +65,85 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
       >
         <Card className="group hover:shadow-xl transition-all duration-300 overflow-hidden h-full">
           <CardContent className="p-0">
-            {/* Image principale */}
+            {/* Vidéo YouTube en priorité, sinon image */}
             <div className="relative h-64 overflow-hidden">
-              <img
-                src={imageError ? '/placeholder.svg' : mainImage}
-                alt={project.titre}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                onError={() => setImageError(true)}
-              />
-              
-              {/* Overlay avec informations */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent">
-                <div className="absolute top-4 left-4 flex gap-2">
-                  <Badge className={getStatusColor(project.statut || 'planifie')}>
-                    {project.statut?.replace('_', ' ').toUpperCase() || 'PLANIFIÉ'}
-                  </Badge>
-                  {project.categorie && (
-                    <Badge variant="secondary" className="bg-white/90 text-fadem-blue">
-                      <span className="flex items-center gap-1">
-                        {getCategoryIcon(project.categorie)}
-                        {project.categorie.toUpperCase()}
-                      </span>
-                    </Badge>
-                  )}
-                </div>
+              {project.video_url ? (
+                <div className="h-full">
+                  <YoutubeVideoPreview
+                    videoUrl={project.video_url}
+                    title={project.titre}
+                    className="h-full"
+                    autoplay={false}
+                  />
+                  
+                  {/* Overlay sur vidéo */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent">
+                    <div className="absolute top-4 left-4 flex gap-2 z-10">
+                      <Badge className={getStatusColor(project.statut || 'planifie')}>
+                        {project.statut?.replace('_', ' ').toUpperCase() || 'PLANIFIÉ'}
+                      </Badge>
+                      {project.categorie && (
+                        <Badge variant="secondary" className="bg-white/90 text-fadem-blue">
+                          <span className="flex items-center gap-1">
+                            {getCategoryIcon(project.categorie)}
+                            {project.categorie.toUpperCase()}
+                          </span>
+                        </Badge>
+                      )}
+                    </div>
 
-                {/* Bouton de vue rapide */}
-                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <Button
-                    size="sm"
-                    variant="secondary"
-                    onClick={() => setShowDetail(true)}
-                    className="bg-white/90 text-fadem-blue hover:bg-white"
-                  >
-                    <Eye className="w-4 h-4" />
-                  </Button>
+                    {/* Bouton de vue rapide sur vidéo */}
+                    <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                      <Button
+                        size="sm"
+                        variant="secondary"
+                        onClick={() => setShowDetail(true)}
+                        className="bg-white/90 text-fadem-blue hover:bg-white"
+                      >
+                        <Eye className="w-4 h-4" />
+                      </Button>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              ) : (
+                <>
+                  <img
+                    src={imageError ? '/placeholder.svg' : mainImage}
+                    alt={project.titre}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    onError={() => setImageError(true)}
+                  />
+                  
+                  {/* Overlay avec informations */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent">
+                    <div className="absolute top-4 left-4 flex gap-2">
+                      <Badge className={getStatusColor(project.statut || 'planifie')}>
+                        {project.statut?.replace('_', ' ').toUpperCase() || 'PLANIFIÉ'}
+                      </Badge>
+                      {project.categorie && (
+                        <Badge variant="secondary" className="bg-white/90 text-fadem-blue">
+                          <span className="flex items-center gap-1">
+                            {getCategoryIcon(project.categorie)}
+                            {project.categorie.toUpperCase()}
+                          </span>
+                        </Badge>
+                      )}
+                    </div>
+
+                    {/* Bouton de vue rapide */}
+                    <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <Button
+                        size="sm"
+                        variant="secondary"
+                        onClick={() => setShowDetail(true)}
+                        className="bg-white/90 text-fadem-blue hover:bg-white"
+                      >
+                        <Eye className="w-4 h-4" />
+                      </Button>
+                    </div>
+                  </div>
+                </>
+              )}
             </div>
 
             {/* Contenu de la carte */}
